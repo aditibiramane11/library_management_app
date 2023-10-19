@@ -1,0 +1,15 @@
+<div class="card-body">
+  <div class="container">
+    <h3>Edit Book</h3>
+  <%= form_with model: @book do |f|%>
+  <div>
+       <%= f.label :title %><br>
+       <%= f.text_field :title, class: "form-control"  %>
+    </div>
+    <div>
+       <%= f.submit class:"btn btn-outline-success" %>
+       <%= button_to 'Delete',book_path(@book), data: {turbo_method: :delete}, class: "btn btn-outline-danger"%> 
+    </div>
+  <% end %>
+</div>
+</div>
