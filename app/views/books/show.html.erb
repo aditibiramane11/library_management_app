@@ -1,8 +1,17 @@
-<div class="container">
-    <%= @book.title %>
-    <%= button_to 'View Book', book_path(book) ,method: :get, class: "btn btn-outline-info" %>&nbsp
-    <%= button_to 'Edit Book', edit_book_path(book), class: "btn btn-outline-danger" %>
-    <%= button_to 'Delete', book_path(book),method: :delete, class: "btn btn-outline-danger" %>
+<br><div class="container">
+    <div class="d-flex align-items-center">
+       <div class="card mx-auto" style="max-width: 1000px;">
+          <div class="card-body text-center">
 
- 
+                  <%= @book.title %><br><br>
+                  <div><% if @book.authors.any? %>
+                             <%= render @book.authors %>
+                       <% end %></div><br>
+                  <div class="btn-group">
+                          <%= button_to 'Edit Book', edit_book_path(@book) ,method: :get, class: "btn btn-outline-success" %>&nbsp
+                           <%= button_to 'Delete', book_path(@book),method: :delete, class: "btn btn-outline-danger" %>
+                    </div>       
+           </div>
+       </div>
+    </div>
 </div>

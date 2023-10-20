@@ -9,6 +9,14 @@
            <%= f.label :title %><br>
            <%= f.text_field :title, class: "form-control"  %>
         </div>
+
+         <div>
+                        <%= f.label :Authors %><br>
+                        <%= f.collection_select(:author_ids, Author.all, :id, :first_name,
+                        { prompt: "Make your selection from the list below (can be empty)"}, { multiple: true, class: "custom-select form-control" }) %><br>
+                      </div>
+
+
        <br><%= f.submit class:"btn btn-outline-success" %>
   <% end %>
   </div>

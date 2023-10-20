@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+#jumbotron1{
+
+	background-image:url("pic1.avif");
+	padding: 50px;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 600px;
+	max-width: 90%;
+	border-radius: 10px;
+}
+.display-4{
+	 background-color:white;
+	 height: 60px;
+	 max-width: 45%;
+}
+
+.navbar{
+	background-color:gray;
+
+}

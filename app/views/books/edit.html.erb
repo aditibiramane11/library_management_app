@@ -7,6 +7,19 @@
        <%= f.text_field :title, class: "form-control"  %>
     </div>
     <div>
+      <div>
+                        <%= f.label :Authors %><br>
+                        <%= f.collection_select(:author_ids, Author.all, :id, :first_name,
+                        { prompt: "Make your selection from the list below (can be empty)"}, { multiple: true, class: "custom-select form-control" }) %><br>
+                      </div>
+
+
+
+
+
+
+
+
        <%= f.submit class:"btn btn-outline-success" %>
        <%= button_to 'Delete',book_path(@book), data: {turbo_method: :delete}, class: "btn btn-outline-danger"%> 
     </div>

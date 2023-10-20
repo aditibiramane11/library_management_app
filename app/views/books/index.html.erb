@@ -3,11 +3,15 @@
   	<div class="col-md-3"></div>
   	<div class="col-md-6">
     <h3 class="my-3">Book Listing</h3>
-
+    <%= link_to "Create new Book", new_book_path, class: "btn btn-outline-info" %><br>
+      <br>
     <% @books.each do |book| %>
       <div class="card mb-3">
         <div class="card-body">
           <h4 class="card-title"><%= link_to book.title, book_path(book), class: "text-success" %></h4>
+          <div><% if book.authors.any? %>
+                             <%= render book.authors %>
+                       <% end %></div><br>
           <div class="btn-group">
             <%= button_to 'View Book', book_path(book) ,method: :get, class: "btn btn-outline-info" %>&nbsp
             <%= button_to 'Edit Book', edit_book_path(book) ,method: :get, class: "btn btn-outline-success" %>&nbsp

@@ -1,4 +1,4 @@
-<div class="container">
+<br><div class="container">
   <div class="d-flex align-items-center">
     <div class="card mx-auto" style="max-width: 1000px;">
       <div class="card-body text-center">
@@ -6,7 +6,6 @@
         <p class="card-text">Date of Birth: <%= @author.date_of_birth %></p>
 
         <div class="btn-group">
-          <%= link_to 'Author Profile', author_path(@author), class: "btn btn-outline-info" %> &nbsp
           <%= link_to 'Edit Profile', edit_author_path(@author), class: "btn btn-outline-success" %> &nbsp
           <%= button_to 'Delete Profile', author_path(@author), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
         </div>
