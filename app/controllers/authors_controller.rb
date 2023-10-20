@@ -27,6 +27,7 @@ class AuthorsController < ApplicationController
 
 	def show
 		@author = Author.find(params[:id])
+		
 	end
 
 	def edit
@@ -46,6 +47,12 @@ class AuthorsController < ApplicationController
     	@author.destroy
     	redirect_to authors_path
     end
+
+    def api_show
+		@author = Author.find(params[:author_id])
+		render json: @author, include: :books
+	end
+
 
 
 private

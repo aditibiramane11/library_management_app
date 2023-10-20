@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :authors
+  resources :authors do 
+    get "/api_show" , to: "authors#api_show"
+
+  end
   resources :books
   root "pages#home"
 
